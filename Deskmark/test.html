@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<style type="text/css">
+		div{
+			background: #ccc;
+		
+
+		}
+		#first{
+			float: left;
+			width: 100px;
+			height: 150px;
+	
+
+		}
+		#second{
+			clear: left;
+			float: left;
+			margin-top: 10px;
+			width: 100px;
+			height: 150px;
+			
+		}
+		#third{
+			zoom:1;
+			width: 200px;
+			height: 310px;
+			margin-left: 110px;
+		}
+	</style>
+</head>
+<body>
+<div id="first"></div>
+<div id="second"></div>
+<div id="third"></div>
+<script type="text/javascript">
+	function zoom(id,x,y){
+		var obj = document.getElementById(id);
+		var dW = obj.clientWidth;
+		var dH = obj.clientHeight;
+
+		obj.onmouseover=function () {
+			this.style.width = dW*x + "px";
+			this.style.height = dH*x + "px";
+			this.style.backgroundColor = "#f00";
+			this.style.zIndex = 1; 
+		}
+		obj.onmouseout = function(){
+			this.style.width = "";
+			this.style.height = "";
+			this.style.paddding = "";
+			this.style.backgroundColor = "";
+			this.style.zIndex = "";
+		}
+	}
+	zoom('first',1.25,1.25);
+	zoom('second',1.25,1.25);
+	zoom('third',1.25,1.25);
+</script>
+</body>
+</html>
